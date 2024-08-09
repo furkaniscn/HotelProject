@@ -11,6 +11,6 @@ namespace HotelProject.WebUI.Dtos.ServiceDto
         [StringLength(100, ErrorMessage ="Hizmet başlığı en fazla 100 karakter içermelidir")]
         public string Title { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }
