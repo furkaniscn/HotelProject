@@ -32,6 +32,9 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 //Api cors yapýlandýrmasýný kullanmak için izinleri verdik
