@@ -1,0 +1,47 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="card-title">
+    <h4>REZERVASYONLAR</h4>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Mail</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+                <th>Rezervasyon Durumu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Mail</td>
+                    <td>@(((DateTime)item.CheckIn).ToString("dd-MMM-yyyy"))</td>
+                    <td>@(((DateTime)item.CheckOut).ToString("dd-MMM-yyyy"))</td>
+                    <td><span class="label gradient-1 rounded">@item.Status</span></td>
+                </tr>
+                <tr>
+                    <td><a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn mb-1 btn-rounded btn-outline-success">Onayla</a></td>
+                    <td><a href="" class="btn mb-1 btn-rounded btn-outline-danger">İptal Et</a></td>
+                    <td><a href="" class="btn mb-1 btn-rounded btn-outline-primary">Güncelle</a></td>
+                    <td><a href="" class="btn mb-1 btn-rounded btn-outline-warning">Beklet</a></td>
+                    <td><a href="" class="btn mb-1 btn-rounded btn-outline-info">Detaylar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

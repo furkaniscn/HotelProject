@@ -5,22 +5,22 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
     public class CreateNewUserDto
     {
         [Required(ErrorMessage = "'Ad' alanı boş geçilemez")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "'Soyad' alanı boş geçilemez")]
-        public string Surname { get; set; }
+        public string? Surname { get; set; }
 
         [Required(ErrorMessage = "'Kullanıcı Adı' alanı boş geçilemez")]
-        public string Username { get; set; }
+        public string? Username { get; set; }
 
         [Required(ErrorMessage = "'Mail' alanı boş geçilemez")]
-        public string Mail { get; set; }
+        public string? Mail { get; set; }
 
         [Required(ErrorMessage = "'Şifre' alanı boş geçilemez")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         [Required(ErrorMessage = "'Şifre Tekrar' alanı boş geçilemez")]
         [Compare("Password", ErrorMessage ="Şifreler aynı olmalıdır")]
-        public string ConfirmPassword { get; set; }
+        public string? ConfirmPassword { get; set; }
     }
 }

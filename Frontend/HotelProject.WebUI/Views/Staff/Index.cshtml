@@ -5,6 +5,9 @@
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
+<div class="card-title">
+    <h4>PERSONELLER</h4>
+</div>
 <table class="table table-striped">
     <tr>
         <th>#</th>
@@ -23,10 +26,10 @@
                 <span class="label gradient-1 rounded">@item.Title</span>
             </td>
             <td><a href="/Staff/DeleteStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
-            <td><a href="/Staff/UpdateStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
-            <td><a href="#" class="btn mb-1 btn-rounded btn-outline-warning">Detaylar</a></td>
+            <td><a href="/Staff/UpdateStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-outline-warning">Güncelle</a></td>
+            <td><a href="#" class="btn mb-1 btn-rounded btn-outline-info">Detaylar</a></td>
         </tr>
     }
 </table>
-<a href="/Staff/AddStaff/" class="btn mb-1 btn-rounded btn-outline-info">Yeni Personel Ekle</a>
+<a href="/Staff/AddStaff/" class="btn mb-1 btn-rounded btn-outline-success">Yeni Personel Ekle</a>
 

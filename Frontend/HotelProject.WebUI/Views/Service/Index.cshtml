@@ -4,6 +4,9 @@
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
+<div class="card-title">
+    <h4>HİZMETLER</h4>
+</div>
 <table class="table table-striped">
     <tr>
         <th>#</th>
@@ -19,11 +22,11 @@
                 <span class="label gradient-1 rounded">@item.Title</span>
             </td>
             <td><a href="/Service/DeleteService/@item.ServiceID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
-            <td><a href="/Service/UpdateService/@item.ServiceID" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+            <td><a href="/Service/UpdateService/@item.ServiceID" class="btn mb-1 btn-rounded btn-outline-warning">Güncelle</a></td>
         </tr>
     }
 </table>
-<a href="/Service/AddService/" class="btn mb-1 btn-rounded btn-outline-info">Yeni Hizmet Ekle</a>
+<a href="/Service/AddService/" class="btn mb-1 btn-rounded btn-outline-success">Yeni Hizmet Ekle</a>
 
 
 
