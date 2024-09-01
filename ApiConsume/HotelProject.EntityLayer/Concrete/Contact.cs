@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace HotelProject.EntityLayer.Concrete
 {
-    public class Guest
+    public class Contact
     {
-        public int GuestID { get; set; }
+        public int ContactID { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
-        public string? City { get; set; }
+        public string? Mail { get; set; }
+        public string? Subject { get; set; }
+        public string? Message { get; set; }
+        public DateTime Date { get; set; }
     }
 }
