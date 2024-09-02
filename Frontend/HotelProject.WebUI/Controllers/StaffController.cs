@@ -44,7 +44,7 @@ namespace HotelProject.WebUI.Controllers
             //İçeriğimizin dönüştürülmesi için kullandığımız sınıf "StringContent"
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             //Listeleme için "PostAsync" kullandık, yukarıda eklemek için "GetAsync" kullanmıştık. 
-            var responseMessage = await client.PostAsync("http://localhost:5266/api/Staff", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:5266/api/Staff/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -80,7 +80,7 @@ namespace HotelProject.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("http://localhost:5266/api/Staff", stringContent);
+            var responseMessage = await client.PutAsync("http://localhost:5266/api/Staff/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
