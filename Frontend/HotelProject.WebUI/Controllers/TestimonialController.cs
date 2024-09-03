@@ -1,4 +1,5 @@
-﻿using HotelProject.WebUI.Models.Staff;
+﻿using HotelProject.WebUI.Dtos.TestimonialDto;
+using HotelProject.WebUI.Models.Staff;
 using HotelProject.WebUI.Models.Testimonial;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,7 +9,6 @@ namespace HotelProject.WebUI.Controllers
 {
     public class TestimonialController : Controller
     {
-
         private readonly IHttpClientFactory _httpClientFactory;
         public TestimonialController(IHttpClientFactory httpClientFactory)
         {
@@ -34,10 +34,10 @@ namespace HotelProject.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTestimonial(TestimonialViewModel model)
+        public async Task<IActionResult> AddTestimonial(CreateTestimonialDto createTestimonialDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(model);
+            var jsonData = JsonConvert.SerializeObject(createTestimonialDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PostAsync("http://localhost:5266/api/Testimonial/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
@@ -64,16 +64,16 @@ namespace HotelProject.WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<TestimonialViewModel>(jsonData);
+                var values = JsonConvert.DeserializeObject<UpdateTestimonialDto>(jsonData);
                 return View(values);
             }
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateTestimonial(TestimonialViewModel model)
+        public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialDto updateTestimonialDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(model);
+            var jsonData = JsonConvert.SerializeObject(updateTestimonialDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("http://localhost:5266/api/Testimonial/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
