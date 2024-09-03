@@ -1,0 +1,35 @@
+﻿@*StaffViewModel'i çağırabilmek için ViewImport kısmına kod ekledik*@
+@model List<ResultStaffDto>
+@{
+    ViewData["Title"] = "GetStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-title">
+    <h4>PERSONELLER</h4>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Personel Adı</th>
+        <th>Personal Unvanı</th>
+        <th>Sosyal Medya 1</th>
+        <th>Sosyal Medya 2</th>
+        <th>Sosyal Medya 3</th>
+        <th>Personel Görseli</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StaffID</td>
+            <td>@item.Name</td>
+            <td>
+                <span class="label gradient-1 rounded">@item.Title</span>
+            </td>
+            <td>@item.SocialMedia1</td>
+            <td>@item.SocialMedia2</td>
+            <td>@item.SocialMedia3</td>
+            <td>@item.StaffImage</td>
+        </tr>
+    }
+</table>
