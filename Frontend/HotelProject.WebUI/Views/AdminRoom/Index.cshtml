@@ -6,7 +6,7 @@
 }
 
 <div class="card-title">
-    <h4>PERSONELLER</h4>
+    <h4>ODALAR</h4>
 </div>
 <table class="table table-striped">
     <tr>
@@ -15,6 +15,7 @@
         <th>Başlık</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Detaylar</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -27,6 +28,7 @@
             <td>@item.Title</td>
             <td><a href="/AdminRoom/DeleteRoom/@item.RoomID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
             <td><a href="/AdminRoom/UpdateRoom/@item.RoomID" class="btn mb-1 btn-rounded btn-outline-warning">Güncelle</a></td>
+            <td><a href="/AdminRoom/GetRoom/@item.RoomID" class="btn mb-1 btn-rounded btn-outline-info">Detaylar</a></td>
         </tr>
     }
 </table>
