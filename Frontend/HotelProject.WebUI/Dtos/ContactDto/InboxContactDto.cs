@@ -1,6 +1,6 @@
 ﻿namespace HotelProject.WebUI.Dtos.ContactDto
 {
-    public class ContactInboxDto
+    public class InboxContactDto
     {
         public int ContactID { get; set; }
         public string? Name { get; set; }
