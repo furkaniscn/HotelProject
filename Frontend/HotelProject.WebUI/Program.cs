@@ -31,6 +31,13 @@ builder.Services.AddMvc(config =>
     .Build();
     config.Filters.Add(new AuthorizeFilter(policy));
 });
+//Authorization yapýlýrken belirli þeyleri kendimize göre ayarladýk.
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    options.LoginPath = "/Login/Index/";
+});
 
 var app = builder.Build();
 
@@ -42,6 +49,9 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseAuthentication();//Authentication için biz ekledik.
+
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");//Error sayfasýný özelleþtirmek için biz ekledik.
+app.UseHttpsRedirection();
 
 app.UseRouting();
 

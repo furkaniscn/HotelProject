@@ -1,6 +1,7 @@
 ﻿using HotelProject.WebUI.Dtos.ServiceDto;
 using HotelProject.WebUI.Dtos.SubscribeDto;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using Newtonsoft.Json;
@@ -8,6 +9,7 @@ using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

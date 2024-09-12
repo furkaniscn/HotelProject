@@ -7,10 +7,10 @@ using System.Text;
 
 namespace HotelProject.WebUI.Controllers
 {
-    public class StaffController : Controller
+    public class AdminStaffController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        public StaffController(IHttpClientFactory httpClientFactory)
+        public AdminStaffController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
