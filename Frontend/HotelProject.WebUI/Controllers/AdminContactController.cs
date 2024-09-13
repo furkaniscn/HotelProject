@@ -61,8 +61,15 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
-        public PartialViewResult SideBarAdminContactPartial()
+        public async Task<PartialViewResult> SideBarAdminContactPartial()
         {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5266/api/Contact/GetContactCount/");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                ViewBag.contactCount = jsonData;
+            }
             return PartialView();
         }
         public PartialViewResult SideBarAdminContactCategoryPartial()
