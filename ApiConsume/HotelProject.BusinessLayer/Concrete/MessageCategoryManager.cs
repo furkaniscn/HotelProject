@@ -20,6 +20,7 @@ namespace HotelProject.BusinessLayer.Concrete
         public void TDelete(MessageCategory t)
         {
             _messageCategoryDal.Delete(t);
+
         }
 
         public MessageCategory TGetById(int id)
