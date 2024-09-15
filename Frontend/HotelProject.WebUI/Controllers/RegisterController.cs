@@ -33,6 +33,8 @@ namespace HotelProject.WebUI.Controllers
                 Surname = createNewUserDto.Surname,
                 UserName = createNewUserDto.Username,
                 Email = createNewUserDto.Mail,
+                City = createNewUserDto.City,
+                WorkLocationID = 1
             };
             //CreateAsync userManager sınıfıyla beraber gelen bir metottur,
             //Identity kütüphanesinde yeni bir kayıt oluşturmak için kullanılır.

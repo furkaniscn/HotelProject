@@ -13,6 +13,9 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
         [Required(ErrorMessage = "'Kullanıcı Adı' alanı boş geçilemez")]
         public string? Username { get; set; }
 
+        [Required(ErrorMessage = "'Şehir' alanı boş geçilemez")]
+        public string? City { get; set; }
+
         [Required(ErrorMessage = "'Mail' alanı boş geçilemez")]
         public string? Mail { get; set; }
 
@@ -20,7 +23,7 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "'Şifre Tekrar' alanı boş geçilemez")]
-        [Compare("Password", ErrorMessage ="Şifreler aynı olmalıdır")]
+        [Compare("Password", ErrorMessage = "Şifreler aynı olmalıdır")]
         public string? ConfirmPassword { get; set; }
     }
 }
