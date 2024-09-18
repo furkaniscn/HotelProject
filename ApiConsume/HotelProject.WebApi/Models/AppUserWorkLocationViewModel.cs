@@ -1,6 +1,6 @@
-﻿namespace HotelProject.WebUI.Dtos.AppUserDto
+﻿namespace HotelProject.WebApi.Models
 {
-    public class ResultAppUserListDto
+    public class AppUserWorkLocationViewModel
     {
         public string? Name { get; set; }
         public string? Surname { get; set; }
