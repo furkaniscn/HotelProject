@@ -16,21 +16,21 @@ namespace HotelProject.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var client = _httpClientFactory.CreateClient();
-            //var responseMessage = await client.GetAsync("http://localhost:5266/api/appuser/");
-            //if (responseMessage.IsSuccessStatusCode)
-            //{
-            //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            //    var values = JsonConvert.DeserializeObject<List<ResultAppUserListDto>>(jsonData);
-            //    return View(values);
-            //}
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5266/api/AppUser/");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultAppUserDto>>(jsonData);
+                return View(values);
+            }
             return View();
         }
 
         public async Task<IActionResult> UserList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5266/api/AppUser/");
+            var responseMessage = await client.GetAsync("http://localhost:5266/api/AppUser/UsersListWithWorkLocations/");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

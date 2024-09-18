@@ -21,10 +21,18 @@ namespace HotelProject.WebApi.Controllers
         //    return Ok(values);
         //}
         [HttpGet]
-        public IActionResult AppUserList()
+        public IActionResult Index()
         {
             var values = _appUserService.TGetList();
             return Ok(values);
         }
+
+        [HttpGet("UsersListWithWorkLocations")]
+        public IActionResult UsersListWithWorkLocations()
+        {
+            var values = _appUserService.TUsersListWithWorkLocations();
+            return Ok(values);
+        }
+
     }
 }
