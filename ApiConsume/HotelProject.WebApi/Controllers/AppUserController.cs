@@ -16,7 +16,6 @@ namespace HotelProject.WebApi.Controllers
         {
             _appUserService = appUserService;
         }
-
         //[HttpGet]
         //public IActionResult UserListWithWorkLocation()
         //{

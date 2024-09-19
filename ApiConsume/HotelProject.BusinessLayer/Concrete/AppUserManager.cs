@@ -42,10 +42,10 @@ namespace HotelProject.BusinessLayer.Concrete
             _appUserDal.Update(t);
         }
 
-        public List<AppUser> TUserListWithWorkLocation()
-        {
-            return _appUserDal.UserListWithWorkLocation();
-        }
+        //public List<AppUser> TUserListWithWorkLocation()
+        //{
+        //    return _appUserDal.UserListWithWorkLocation();
+        //}
 
         public List<AppUser> TUsersListWithWorkLocations()
         {
