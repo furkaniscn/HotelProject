@@ -6,7 +6,7 @@
 }
 
 <div class="card-title">
-    <h4>ODALAR</h4>
+    <h4>MİSAFİRLER</h4>
 </div>
 <table class="table table-striped">
     <tr>
@@ -27,10 +27,10 @@
                 <span class="label gradient-2 rounded">@item.Surname</span>
             </td>
             <td>@item.City</td>
-            <td><a href="/Guest/DeleteGuest/@item.GuestID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
-            <td><a href="/Guest/UpdateGuest/@item.GuestID" class="btn mb-1 btn-rounded btn-outline-warning">Güncelle</a></td>
+            <td><a href="/AdminGuest/DeleteGuest/@item.GuestID" class="btn mb-1 btn-rounded btn-outline-danger">Sil</a></td>
+            <td><a href="/AdminGuest/UpdateGuest/@item.GuestID" class="btn mb-1 btn-rounded btn-outline-warning">Güncelle</a></td>
         </tr>
     }
 </table>
-<a href="/Guest/AddGuest/" class="btn mb-1 btn-rounded btn-outline-success">Yeni Misafir Ekle</a>
+<a href="/AdminGuest/AddGuest/" class="btn mb-1 btn-rounded btn-outline-success">Yeni Misafir Ekle</a>
 
