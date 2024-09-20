@@ -29,7 +29,7 @@ namespace HotelProject.WebUI.Controllers
                     (loginUserDto.Username, loginUserDto.Password, false, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "AdminAbout");
+                    return RedirectToAction("Index", "AdminDashboard");
                 }
                 else
                 {
