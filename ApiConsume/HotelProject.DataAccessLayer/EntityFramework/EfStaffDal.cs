@@ -23,5 +23,14 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             var value = context.Staffs.Count();
             return value;
         }
+
+        public List<Staff> Last4Staff()
+        {
+            using var context = new Context();
+            //OrderByDescending Z'den A'ya doğru sıralama yapar.
+            //Take genelde liste içerisinden adetli olarak veriyi getirmemizi sağlar.
+            var values = context.Staffs.OrderByDescending(x => x.StaffID).Take(4).ToList();
+            return values;
+        }
     }
 }
