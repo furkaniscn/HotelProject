@@ -33,7 +33,7 @@ namespace HotelProject.WebUI.Controllers
                                                 Text = x.MessageCategoryName,
                                                 Value = x.MessageCategoryID.ToString()
                                             }).ToList();
-            ViewBag.v = values2;
+            ViewBag.messageCategory = values2;
             return View();
         }
 
