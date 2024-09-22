@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
@@ -38,6 +39,13 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             var context = new Context();
             var value = context.Bookings.Count();
             return value;
+        }
+
+        public List<Booking> Last6Booking()
+        {
+            var context = new Context();
+            var values = context.Bookings.OrderByDescending(x => x.BookingID).Take(6).ToList();
+            return values;
         }
     }
 }
