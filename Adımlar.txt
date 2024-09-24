@@ -1,9 +1,0 @@
---Api Testi ve Swagger
-Tema Ekleme
-Register - Login
-
-
-Onay Bekliyor
-Onaylandý
-Ýptal Edildi
-Bekletiliyor
