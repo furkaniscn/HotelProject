@@ -13978,6 +13978,14 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
         color: #fff;
     }
 
+.social-icons .instagram {
+    background: #C13584;
+}
+
+    .social-icons .instagram i, .social-icons .instagram span {
+        color: #fff;
+    }
+
 .media-reply {
     margin-bottom: 20px;
 }
@@ -16895,6 +16903,10 @@ table.dataTable thead .sorting_desc_disabled {
 
     .social-graph-wrapper.widget-twitter {
         background-color: #1da1f2;
+    }
+
+    .social-graph-wrapper.instagram {
+        background-color: #C13584;
     }
 
     .social-graph-wrapper.widget-linkedin {
