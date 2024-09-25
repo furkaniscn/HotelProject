@@ -4,6 +4,9 @@
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
+<div class="card-title">
+    <h4>Kullanıcı Listesi</h4>
+</div>
 <table class="table table-xs mb-0">
     <thead>
         <tr>
@@ -19,7 +22,7 @@
                     <img src="@item.ImageUrl" class=" rounded-circle mr-3" alt="">
                     @item.Name @item.Surname
                 </td>
-                <td><a href="/RoleAssign/AssignRole/" class="btn mb-1 btn-rounded btn-outline-warning">Rol Ata</a></td>
+                <td><a href="/RoleAssign/AssignRole/@item.Id" class="btn mb-1 btn-rounded btn-outline-warning">Rol Ata</a></td>
             </tr>
         }
     </tbody>

@@ -1,8 +1,60 @@
-﻿
+﻿@model List<RoleAssignViewModel>
 @{
     ViewData["Title"] = "AssignRole";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
-<h1>AssignRole</h1>
+<div class="role-assign-container">
+    <h2 class="page-title">Rol Atama Sayfası</h2>
 
+    <form method="post" class="role-assign-form">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="form-check custom-checkbox">
+                <input type="hidden" asp-for="@Model[i].RoleID" />
+                <input type="hidden" asp-for="@Model[i].RoleName" />
+                <input type="checkbox" asp-for="@Model[i].RoleExist" class="form-check-input" id="role-@Model[i].RoleID" />
+                <label class="form-check-label" for="role-@Model[i].RoleID">@Model[i].RoleName</label>
+            </div>
+        }
+        <br />
+        <button class="btn mb-1 btn-rounded btn-outline-success btn-full-width">Kullanıcı için Rolleri Güncelle</button>
+    </form>
+</div>
+
+<style>
+    .role-assign-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .page-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+    }
+
+    .custom-checkbox {
+        margin-bottom: 12px;
+    }
+
+        .custom-checkbox .form-check-input {
+            margin-right: 10px;
+        }
+
+        .custom-checkbox .form-check-label {
+            font-size: 16px;
+            color: #333;
+        }
+
+    .btn-full-width {
+        width: 100%; /* Butonu tam genişlikte yapar */
+        max-width: 500px; /* İstersen maksimum genişliği sınırlayabilirsin */
+        padding: 12px 20px; /* Butonu daha büyük göstermek için padding artırıldı */
+        font-size: 16px; /* Yazı boyutu artırıldı */
+    }
+</style>
