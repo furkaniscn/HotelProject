@@ -1,0 +1,48 @@
+﻿@model ResultBookingDto
+@{
+    ViewData["Title"] = "DetailsReservation";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-title">
+    <h4>Rezervasyon Detayları</h4>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Rezervasyon ID</th>
+        <th>Misafir Ad</th>
+        <th>Misafir Soyad</th>
+        <th>Şehir</th>
+        <th>Ülke</th>
+        <th>Giriş Tarihi</th>
+        <th>Çıkış Tarihi</th>
+        <th>Yetişkin Sayısı</th>
+        <th>Çocuk Sayısı</th>
+        <th>Oda Sayısı</th>
+        <th>Durum</th>
+        <th>Özel İstekler</th>
+        <th>Açıklama</th>
+    </tr>
+    <tr>
+        <td>
+            <span class="label gradient-2 rounded">@Model.BookingID</span>
+        </td>
+        <td>@Model.Name</td>
+        <td>@Model.Surname</td>
+        <td>@Model.City</td>
+        <td>@Model.Country</td>
+        <td>
+            <span class="label gradient-1 rounded" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@(((DateTime)Model.CheckIn).ToString("dd-MM-yyyy"))</span>
+        </td>
+        <td>
+            <span class="label gradient-1 rounded" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@(((DateTime)Model.CheckOut).ToString("dd-MM-yyyy"))</span>
+        </td>
+        <td>@Model.AdultCount</td>
+        <td>@Model.ChildCount</td>
+        <td>@Model.RoomCount</td>
+        <td>@Model.Status</td>
+        <td>@Model.SpecialRequest</td>
+        <td>@Model.Description</td>
+    </tr>
+</table>
+
